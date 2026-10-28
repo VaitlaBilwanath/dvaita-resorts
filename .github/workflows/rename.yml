@@ -1,0 +1,17 @@
+name: Rename landing page to index
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  rename:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rename file
+        run: |
+          git config user.name "VaitlaBilwanath"
+          git config user.email "vaitlabinnu@gmail.com"
+          git mv dvaita-resorts-landing-page.html index.html
+          git commit -m "Rename dvaita-resorts-landing-page.html to index.html"
+          git push
